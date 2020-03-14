@@ -1,12 +1,13 @@
 .menu-link {
+  font-size: $h4-font-size;
   background-color: white;
   border-bottom: none;
   color: $body-color;
   position: fixed;
   z-index: 200;
-  padding: 8px 12px 12px 12px;
-  // @include card(1);
-  margin: 0 12px 12px 12px;
+  padding: 12px 12px 12px 12px;
+  @include card(1);
+  margin: 4px 12px 12px 12px;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -17,8 +18,8 @@
 }
 
 .menu-brand {
-  margin: 12px 0 12px 110px;
-  padding-top: 30px;
+  margin: 12px 0 12px 95px;
+  padding-top: 24px;
 
   .brand-wordmark {
     font-size: $h5-font-size;
