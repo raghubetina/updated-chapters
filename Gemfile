@@ -27,6 +27,7 @@ gem "rails", "~> 5.2.2"
 gem "rollbar"
 gem "rouge"
 gem "sassc-rails"
+gem "skylight"
 gem "uglifier", ">= 1.3.0"
 
 group :development, :test do
