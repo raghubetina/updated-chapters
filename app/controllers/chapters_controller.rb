@@ -9,13 +9,6 @@ class ChaptersController < ApplicationController
     if @chapter.present?
       @page_title = "Home"
 
-      @doc = Kramdown::Document.new(
-        @chapter.content,
-        auto_ids: true,
-        hard_wrap: false,
-        input: "GFM",
-      )
-
       render :show
     else
       redirect_to chapters_url
@@ -32,13 +25,6 @@ class ChaptersController < ApplicationController
   # GET /chapters/1.json
   def show
     @page_title = @chapter.title
-
-    @doc = Kramdown::Document.new(
-      @chapter.content,
-      auto_ids: true,
-      hard_wrap: false,
-      input: "GFM",
-    )
   end
 
   # GET /chapters/new
