@@ -3,7 +3,7 @@ Rails.application.configure do
     ENV["APPLICATION_HOST"] = ENV["HEROKU_APP_NAME"] + ".herokuapp.com"
   end
 
-  # config.middleware.use Rack::CanonicalHost, ENV.fetch("APPLICATION_HOST")
+  config.middleware.use Rack::CanonicalHost, ENV.fetch("APPLICATION_HOST")
 
   # Settings specified here will take precedence over those in config/application.rb.
 
