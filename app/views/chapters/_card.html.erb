@@ -1,0 +1,34 @@
+<div class="card mb-3">
+  <h2 class="card-header h4">
+    Chapter #<%= chapter.id %>
+  </h2>
+
+  <div class="card-body">
+    <dl class="mb-1">
+      <dt>Title</dt>
+      <dd><%= chapter.title %></dd>
+
+      <dt>Content</dt>
+      <dd><%= chapter.content %></dd>
+
+      <dt>Vimeo</dt>
+      <dd><%= chapter.vimeo_id %></dd>
+
+      <dt>User</dt>
+      <dd><%= chapter.user %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified mt-auto">
+      <%= link_to_show_or_back chapter, fa_icon("search-plus"), fa_icon("chevron-left"), class: "btn btn-outline-secondary" %>
+
+      <%= link_to fa_icon("edit"), edit_chapter_url(chapter), class: "btn btn-outline-secondary" %>
+
+      <%= link_to fa_icon("trash-o"), chapter, method: :delete, data: { confirm: "Do you really want to delete this chapter?" }, class: "btn btn-outline-secondary" %>
+    </div>
+  </div>
+
+  <div class="card-footer text-muted">
+    Last updated <%= time_ago_in_words(chapter.updated_at) %> ago
+  </div>
+</div>

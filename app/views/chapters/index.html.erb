@@ -1,0 +1,13 @@
+<div class="row justify-content-center mb-3">
+  <div class="col-md-8">
+    <div class="card">
+      <h1 class="card-header h4 d-flex align-items-center justify-content-between">
+        Chapters
+      </h1>
+
+      <div class="list-group list-group-flush">
+        <%= render collection: @chapters, partial: "list_item", as: :chapter %>
+      </div>
+    </div>
+  </div>
+</div>

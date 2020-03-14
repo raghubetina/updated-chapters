@@ -1,0 +1,79 @@
+<% was_validated = chapter.errors.any? %>
+
+<% form_html_options = { novalidate: true, class: "mb-3" } %>
+
+<%= form_for(chapter, html: form_html_options) do |f| %>
+  <div class="form-group">
+    <% title_class = "form-control" %>
+    <% title_was_invalid = chapter.errors.include?(:title) %>
+
+    <% if was_validated %>
+      <% if title_was_invalid %>
+        <% title_class << " is-invalid" %>
+      <% else %>
+        <% title_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :title %>
+
+    <%= f.text_field :title, class: title_class, placeholder: "Enter title" %>
+    <% if title_was_invalid %>
+      <% chapter.errors.full_messages_for(:title).each do |message| %>
+        <div class="invalid-feedback">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% content_class = "form-control" %>
+    <% content_was_invalid = chapter.errors.include?(:content) %>
+
+    <% if was_validated %>
+      <% if content_was_invalid %>
+        <% content_class << " is-invalid" %>
+      <% else %>
+        <% content_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :content %>
+
+    <%= f.text_area :content, class: content_class, placeholder: "Enter content" %>
+    <% if content_was_invalid %>
+      <% chapter.errors.full_messages_for(:content).each do |message| %>
+        <div class="invalid-feedback">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <% vimeo_id_class = "form-control" %>
+    <% vimeo_id_was_invalid = chapter.errors.include?(:vimeo_id) %>
+
+    <% if was_validated %>
+      <% if vimeo_id_was_invalid %>
+        <% vimeo_id_class << " is-invalid" %>
+      <% else %>
+        <% vimeo_id_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :vimeo_id %>
+
+    <%= f.text_field :vimeo_id, class: vimeo_id_class, placeholder: "Enter Vimeo ID" %>
+    <% if vimeo_id_was_invalid %>
+      <% chapter.errors.full_messages_for(:vimeo_id).each do |message| %>
+        <div class="invalid-feedback">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%= display_meta_tags site: "Handbook", reverse: true %>
+    <%= csrf_meta_tags %>
+    <%= render "shared/favicon_meta_tags" %>
+
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+
+  <body>
+    <%= link_to "#menu", class: "menu-link btn btn-link btn-lg" do %>
+      <%= image_tag "shield.png", width: 60 %>
+    <% end %>
+
+    <nav id="menu" class="panel" role="navigation">
+      <div class="menu-brand">
+        <%= link_to root_path do %>
+          <div class="h3 brand-name" style="text-align: justify">Handbook</div>
+        <% end %>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>

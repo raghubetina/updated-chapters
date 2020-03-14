@@ -1,0 +1,155 @@
+.chapter {
+  @include make-row();
+
+  .chapter-rendered {
+    @include make-col-ready();
+    @include make-col(12);
+
+    // Set width of top-level headings, code blocks, and images
+
+    &>h1, &>h2, &>h3 {
+      @include make-col-ready();
+
+      @include media-breakpoint-up(lg) {
+        @include make-col(11);
+        @include make-col-offset(1);
+      }
+    }
+
+    &>.image-section {
+      @include make-col-ready();
+
+      @include media-breakpoint-up(lg) {
+        @include make-col(12);
+      }
+    }
+
+    // Set width of other block-level elements
+
+    &>h4, &>h5, &>h6, &>p, &>ol, &>ul, &>blockquote, &>div.hr-responsive {
+      @include make-col-ready();
+
+      @include media-breakpoint-up(lg) {
+        @include make-col(6);
+        @include make-col-offset(1);
+      }
+    }
+
+    &>table {
+      @include make-col-ready();
+
+      @include media-breakpoint-up(lg) {
+        @include make-col-offset(1);
+      }
+    }
+
+    // List indentation
+
+    &>ul, &>ol {
+      padding-left: 3em;
+    }
+
+    //  Heading styles
+
+    h1, h2, h3, h4, h5, h6 {
+      display: flex;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    // Inline code styles
+
+    p, h1, h2, h3, h4, h5, h6, td, li, strong, em {
+      code {
+        background-color: $gray-100;
+        padding: 5px 7px;
+        border-radius: 3px;
+        font-size: 1.06em;
+      }
+    }
+
+    // Blockquote styles
+
+    blockquote {
+      border-left: .25em solid #dfe2e5;
+      color: #6a737d;
+      padding: 0 1em;
+    }
+
+    // Code block styles
+
+    .code-block {
+      font-size: 1.2em;
+      background-color: $gray-100;
+      padding: 1rem 0;
+
+      pre {
+        @include make-col-ready();
+
+        @include media-breakpoint-up(lg) {
+          @include make-col(11);
+          @include make-col-offset(1);
+        }
+
+        margin-bottom: 0;
+      }
+
+      margin-bottom: 1rem;
+    }
+
+    // Sidenote styles
+
+    .sidenote, .sidenote-group, .footnotes {
+      font-size: $font-size-sm;
+    }
+
+    .sidenote, .sidenote-group {
+      float: right;
+      @include make-col-ready();
+
+      @include media-breakpoint-up(lg) {
+        @include make-col(4);
+      }
+
+      .ref-mark {
+        float: left;
+        vertical-align: super;
+        font-size: $font-size-sm;
+        padding-right: 0.5em;
+      }
+
+      .reversefootnote {
+        @include media-breakpoint-up(lg) {
+          display: none;
+        }
+      }
+    }
+
+    .sidenote-group {
+      padding-left: 0;
+
+      .sidenote {
+        clear: right;
+
+        @include media-breakpoint-up(lg) {
+          @include make-col(12);
+        }
+      }
+    }
+
+    :first-child {
+      margin-top: 0;
+    }
+
+    // Underlines with proper descenders
+
+    $color-text:        $link-color;
+    $color-background:  $body-bg;
+    $color-selection:   #b4d5fe;
+
+    a:not(.header-link) {
+      @include link-underline($color-background, $color-text, $color-selection);
+    }
+  }
+}

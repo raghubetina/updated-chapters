@@ -1,0 +1,27 @@
+<tr>
+  <td>
+    <%= chapter.title %>
+  </td>
+
+  <td>
+    <%= chapter.content %>
+  </td>
+
+  <td>
+    <%= chapter.vimeo_id %>
+  </td>
+
+  <td>
+    <%= chapter.user %>
+  </td>
+
+  <td>
+    <div class="btn-group">
+      <%= link_to fa_icon("search-plus fw"), chapter, class: "btn btn-sm btn-outline-secondary" %>
+
+      <%= link_to fa_icon("edit fw"), edit_chapter_url(chapter), class: "btn btn-sm btn-outline-secondary" %>
+
+      <%= link_to fa_icon("trash-o fw"), chapter, method: :delete, data: { confirm: "Do you really want to delete this chapter?" }, class: "btn btn-sm btn-outline-secondary" %>
+    </div>
+  </td>
+</tr>

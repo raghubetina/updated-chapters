@@ -1,0 +1,32 @@
+/*
+ * Header link placement and hover behavior
+ */
+
+.header-link {
+  position: absolute;
+  padding-right: .5em;
+  margin-left: -50px;
+  color: inherit !important;
+  text-decoration: none !important;
+  opacity: 0;
+  font-size: 50%;
+}
+
+/* do not display in less than 768px screen */
+@media (max-width: 767px) {
+  .header-link {
+    display: none !important;
+  }
+}
+
+*:hover > .header-link {
+  opacity: .75;
+  /* to fade links as they appear, change transition-property from 'color' to 'all' */
+  -webkit-transition: all .33s linear;
+  transition: all .33s linear;
+}
+
+*:hover > .header-link:hover,
+*:hover > .header-link:focus {
+  opacity: 1;
+}
