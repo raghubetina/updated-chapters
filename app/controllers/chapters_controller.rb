@@ -7,7 +7,16 @@ class ChaptersController < ApplicationController
     @chapter = Chapter.find_by(title: "README.md")
 
     if @chapter.present?
-      redirect_to @chapter
+      @page_title = "Home"
+
+      @doc = Kramdown::Document.new(
+        @chapter.content,
+        auto_ids: true,
+        hard_wrap: false,
+        input: "GFM",
+      )
+
+      render :show
     else
       redirect_to chapters_url
     end
