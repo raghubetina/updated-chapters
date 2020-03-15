@@ -10,7 +10,7 @@
 
     // Set width of top-level headings, code blocks, and images
 
-    &>h1, &>h2, &>h3 {
+    &>h1, &>h2, &>h3, &>h4  {
       @include make-col-ready();
 
       @include media-breakpoint-up(lg) {
@@ -29,7 +29,7 @@
 
     // Set width of other block-level elements
 
-    &>h4, &>h5, &>h6, &>p, &>ol, &>ul, &>blockquote, &>div.hr-responsive {
+    &>h5, &>h6, &>p, &>ol, &>ul, &>blockquote, &>div.hr-responsive {
       @include make-col-ready();
 
       @include media-breakpoint-up(lg) {
