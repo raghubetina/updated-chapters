@@ -28,7 +28,7 @@ class DraftHtml < Kramdown::Converter::Html
   def convert_img(el, _indent)
     <<-HTML.strip_heredoc
       <div class="image-section">
-        #{super(el, indent).gsub('<img', '<img class="img-fluid"')}
+        #{super(el, indent).gsub('<img', '<img class="img-fluid w-100"')}
       </div>
     HTML
   end

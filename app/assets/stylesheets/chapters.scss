@@ -3,6 +3,7 @@
 
   .chapter-rendered {
     padding-top: 1em;
+    padding-bottom: 10em;
     
     @include make-col-ready();
     @include make-col(12);
