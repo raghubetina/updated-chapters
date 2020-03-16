@@ -47,6 +47,7 @@
 
     // plugin settings
     var settings = $.extend({
+      'openDefault': false,
       'menu': ('#menu'),
       'push': ('.push'),
       'side': 'left',
@@ -112,6 +113,12 @@
         this.$menu = $(settings.menu);
         this.$push = $(settings.push);
         this.width = settings.menuWidth;
+
+        if (settings.openDefault) {
+          $(document).ready(function() {
+              view.toggleOpen();
+          });
+        }
 
         // CSS for how the menu will be positioned off screen
         var positionOffScreen = {
