@@ -20,7 +20,9 @@
       %>
       
       <p class="text-muted font-italic">
-        Last updated: <%= @chapter.updated_at.strftime("%A, %B #{@chapter.updated_at.day.ordinalize}, at %l:%M%P") %>
+        <% last_updated = @chapter.updated_at %>
+
+        Last updated: <%= last_updated.in_time_zone("Central Time (US & Canada)").strftime("%A, %B #{@chapter.updated_at.day.ordinalize}, at %l:%M%P") %>
       </p>
 
       <%= doc.to_draft_html.html_safe %>
