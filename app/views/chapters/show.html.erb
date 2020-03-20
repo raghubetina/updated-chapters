@@ -28,4 +28,16 @@
       <%= doc.to_draft_html.html_safe %>
     </div>
   </div>
+
+  <script>
+    $(function() {
+      setInterval(function() {
+        reload_page();
+      }, 60*60000);
+    });
+
+    function reload_page() {
+      window.location.reload(true);
+    }
+  </script>
 <% end %>
