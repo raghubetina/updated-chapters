@@ -88,7 +88,7 @@ class ChaptersController < ApplicationController
       client.contents(REPO).each do |file|
         if file.name.ends_with?(".md")
           chapter = Chapter.find_or_initialize_by(title: file.name)
-          chapter.base_asset_url = "https://raw.githubusercontent.com/#{REPO}/master"
+          chapter.base_asset_url = "https://res.cloudinary.com/firstdraft/image/fetch/f_auto,q_auto:low/https://raw.githubusercontent.com/#{REPO}/master"
           chapter.content = open(file.download_url).read.gsub("![](", "![](#{chapter.base_asset_url}")
           chapter.save
         end
