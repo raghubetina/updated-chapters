@@ -31,8 +31,8 @@ $(function() {
 
   var menu = $(".menu-link").bigSlide({
     easyClose: true,
-    menuWidth: "360px",
-    openDefault: true
+    menuWidth: "360px"
+    // openDefault: true
   });
 
   var bigSlideAPI = menu.bigSlideAPI;

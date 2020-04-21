@@ -4,16 +4,20 @@
 // without modifying source files.
 
 $font-family-serif:      "Georgia", serif;
-$font-family-sans-serif: "Arial", "Helvetica", sans-serif;
 $font-family-monospace:  "Inconsolata", monospace;
 $font-family-base:       $font-family-serif;
 $font-size-base:         1.25rem;
 $line-height-base:       1.846;
-$headings-font-family: $font-family-sans-serif;
-$headings-font-weight: 600;
+$headings-font-family:   "Amatic SC";
+
+$h1-font-size: 3.75rem;
+$h2-font-size: 3rem;
+$h3-font-size: 2.625rem;
+$h4-font-size: 2.25rem;
+$h5-font-size: 1.875rem;
+$h6-font-size: 1.5rem;
 
 $enable-rounded: false;
-
 
 $blue: #34657F;
 $red: #800000;

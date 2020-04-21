@@ -18,14 +18,28 @@
           input: "GFM",
         )
       %>
-      
+
+      <%= doc.to_draft_html.html_safe %>
+
+      <% if false %>
       <p class="text-muted small font-italic">
         <% last_updated = @chapter.updated_at %>
 
         Last updated: <%= last_updated.in_time_zone("Central Time (US & Canada)").strftime("%A, %B #{@chapter.updated_at.day.ordinalize}, %Y at %l:%M%P") %>
       </p>
 
-      <%= doc.to_draft_html.html_safe %>
+      <div class="col-md-6 offset-md-1 mt-2 mb-2" style="height: 5rem;">
+        <a id="completion-notice" href="" class="btn btn-block btn-outline-success disabled" style="display: none;">
+          <i class="far fa-check-circle"></i>
+
+          Finished in
+
+          <span id="main-timer">0</span>
+        </a>
+      </div>
+      <% end %>
+
+      <hr>
     </div>
   </div>
 

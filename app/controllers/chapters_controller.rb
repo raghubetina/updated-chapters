@@ -4,7 +4,7 @@ class ChaptersController < ApplicationController
   before_action :set_chapter, only: %i[show edit update destroy]
 
   def home
-    @chapter = Chapter.find_by(id: 1)
+    @chapter = Chapter.find_by(id: 753)
 
     if @chapter.present?
       @page_title = "Home"
