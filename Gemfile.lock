@@ -115,7 +115,8 @@ GEM
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     jwt (2.2.1)
-    kramdown (2.1.0)
+    kramdown (2.3.1)
+      rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     listen (3.1.5)
@@ -132,7 +133,9 @@ GEM
     meta-tags (2.11.1)
       actionpack (>= 3.2.0, < 6.1)
     method_source (0.9.2)
-    mimemagic (0.3.3)
+    mimemagic (0.3.10)
+      nokogiri (~> 1)
+      rake
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -212,6 +215,7 @@ GEM
     responders (3.0.0)
       actionpack (>= 5.0)
       railties (>= 5.0)
+    rexml (3.2.4)
     rollbar (2.24.0)
     rouge (3.6.0)
     ruby-graphviz (1.2.4)
